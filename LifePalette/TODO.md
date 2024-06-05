@@ -73,10 +73,35 @@ TO-DO:
 	
 	- 
 
-Example Implementation:
+EXAMPLE COLOR IMPLEMENTATION:
 
 		- Header and Footer Background: Light Teal (#457B9D)
 		- Main Background: Pale Blue (#F1FAEE)
 		- Buttons and Links: Light Coral (#E63946)
 		- Text: Dark Gray or Black for readability
 		- Accents and Highlights: Soft Pink (#F4A261)
+
+
+STRUCTURAL LAYOUT:
+
+	- Views
+		- UI
+		- Bind UI elements to properties and comands in ViewModel 
+		- Handle user interactions that can be easily managed within the view 
+
+	- ViewModels
+		- Implement properties and commands that the view binds to 
+		- Handle user input and actions, often by calling services
+		- Manage teh state of the view
+		- Communicate the models and services
+
+	- Models 
+		- Represent the applications data
+		- Define properties that map to data fields
+		- May include data validation logic 
+
+	- Services
+		- Encapsulate Business logic
+		- Handle data access and persistence
+		- Interact wtih external systems or APIs
+		- Provide reusable functionality

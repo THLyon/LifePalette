@@ -19,5 +19,9 @@ namespace LifePalette.Views
             // If sign-up is successful, navigate to the MainPage
             await Navigation.PopAsync();
         }
+        private async void OnLoginTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
     }
 }

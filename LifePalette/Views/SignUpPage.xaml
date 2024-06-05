@@ -2,11 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LifePalette.Views.SignUpPage">
-
-    <StackLayout Padding="30">
-        <Entry Placeholder="Email" x:Name="EmailEntry" />
-        <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" />
-        <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
-    </StackLayout>
-
+	<StackLayout Padding="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+		<Entry Placeholder="Email" x:Name="EmailEntry" HorizontalOptions="FillAndExpand" WidthRequest="300" />
+		<Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" HorizontalOptions="FillAndExpand" WidthRequest="300" />
+		<Button Text="Sign Up" Clicked="OnSignUpButtonClicked" HorizontalOptions="FillAndExpand" WidthRequest="300" />
+		<Label HorizontalOptions="Center">
+			<Label.FormattedText>
+				<FormattedString>
+					<Span Text="Already have an account? Log In " />
+					<Span Text="here" TextColor="Blue" TextDecorations="Underline">
+						<Span.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnLoginTapped" />
+						</Span.GestureRecognizers>
+					</Span>
+				</FormattedString>
+			</Label.FormattedText>
+		</Label>
+	</StackLayout>
 </ContentPage>
