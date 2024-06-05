@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace LifePalette.Views
 {
-    internal class LoginPage
+    public partial class LoginPage : ContentPage
     {
+        public LoginPage()
+        {
+            InitializeComponent();
+        }
+        private async void OnLoginButtonClicked(object sender, EventArgs e)
+        {
+            // Implement your login logic here
+
+            // If login is successful, navigate to the MainPage
+            await Navigation.PopAsync();
+        }
     }
 }

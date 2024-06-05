@@ -72,3 +72,11 @@ Additional Considerations:
 TO-DO: 
 	
 	- 
+
+Example Implementation:
+
+		- Header and Footer Background: Light Teal (#457B9D)
+		- Main Background: Pale Blue (#F1FAEE)
+		- Buttons and Links: Light Coral (#E63946)
+		- Text: Dark Gray or Black for readability
+		- Accents and Highlights: Soft Pink (#F4A261)

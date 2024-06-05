@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using LifePalette.Services;
+using Microsoft.Extensions.Logging;
 
 namespace LifePalette
 {
@@ -15,9 +16,8 @@ namespace LifePalette
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+            // Register the authentication service
+            builder.Services.AddSingleton<IAuthService, AuthService>();
 
             return builder.Build();
         }

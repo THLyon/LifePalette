@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LifePalette.Views
 {
-    internal class CalendarPage
+    public partial class CalendarPage : ContentPage
     {
+        public CalendarPage()
+        {
+            InitializeComponent();
+        }
     }
 }

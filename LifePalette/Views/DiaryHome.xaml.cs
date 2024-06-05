@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LifePalette.Views
 {
-    internal class DiaryHome
+    public partial class DiaryHome : ContentPage
     {
+        public DiaryHome()
+        {
+            InitializeComponent();
+        }
     }
 }

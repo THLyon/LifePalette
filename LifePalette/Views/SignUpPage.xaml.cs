@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace LifePalette.Views
 {
-    internal class SignUpPage
+    public partial class SignUpPage : ContentPage
     {
+        public SignUpPage()
+        {
+            InitializeComponent();
+        }
+        private async void OnSignUpButtonClicked(object sender, EventArgs e)
+        {
+            // Implement your sign-up logic here
+
+            // If sign-up is successful, navigate to the MainPage
+            await Navigation.PopAsync();
+        }
     }
 }

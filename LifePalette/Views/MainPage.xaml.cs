@@ -1,26 +1,43 @@
-﻿namespace LifePalette
+﻿using LifePalette.Views;
+using LifePalette.Services;
+
+namespace LifePalette.Views
 {
     public partial class MainPage : ContentPage
     {
-        //int count = 0;
+        private readonly IAuthService _authService;
 
         public MainPage()
         {
             InitializeComponent();
+            // _authService = DependencyService.Get<IAuthService>();
+            _authService = (Application.Current as App)?.ServiceProvider?.GetService<IAuthService>();
+            CheckAuthentication();
         }
-        /*
-        private void OnCounterClicked(object sender, EventArgs e)
+
+        private async void CheckAuthentication()
         {
-            count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            if (!_authService.IsUserSignedIn())
+            {
+                // Navigate to LoginPage if the user is not signed in
+                await Navigation.PushAsync(new LoginPage());
+            }
         }
-        */
-    }
 
+        private async void OnSignUpClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUpPage());
+        }
+
+        private async void OnLoginClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
+
+        private async void OnCalendarClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CalendarPage());
+        }
+    }
 }
